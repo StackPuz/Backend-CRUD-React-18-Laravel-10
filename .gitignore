@@ -1,0 +1,5 @@
+/laravel_api/composer.lock
+/laravel_api/public/storage
+/laravel_api/vendor
+/react/node_modules
+/react/package-lock.json
