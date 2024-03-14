@@ -99,7 +99,6 @@ export default function OrderHeaderIndex(props) {
                   <td className="text-center">{orderHeader.order_date}</td>
                   <td className="text-center">
                     <Link className="btn btn-sm btn-secondary" to={`/orderHeader/${orderHeader.id}`} title="View"><i className="fa fa-eye"></i></Link>
-                    <Link className="btn btn-sm btn-primary" to={`/orderHeader/edit/${orderHeader.id}`} title="Edit"><i className="fa fa-pencil"></i></Link>
                     <a className="btn btn-sm btn-danger" href="#!" onClick={(e)=> deleteItem(e, orderHeader.id)} title="Delete"><i className="fa fa-times"></i></a>
                   </td>
                 </tr>
