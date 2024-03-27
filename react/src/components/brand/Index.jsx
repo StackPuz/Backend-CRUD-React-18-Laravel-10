@@ -94,6 +94,7 @@ export default function BrandIndex(props) {
                   <td>{brand.name}</td>
                   <td className="text-center">
                     <Link className="btn btn-sm btn-secondary" to={`/brand/${brand.id}`} title="View"><i className="fa fa-eye"></i></Link>
+                    <Link className="btn btn-sm btn-primary" to={`/brand/edit/${brand.id}`} title="Edit"><i className="fa fa-pencil"></i></Link>
                     <a className="btn btn-sm btn-danger" href="#!" onClick={(e)=> deleteItem(e, brand.id)} title="Delete"><i className="fa fa-times"></i></a>
                   </td>
                 </tr>

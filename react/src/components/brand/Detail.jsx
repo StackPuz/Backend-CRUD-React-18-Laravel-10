@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Service from './Service'
 import Util from '../../util'
-import http from '../../http'
 
 export default function BrandDetail(props) {
   
@@ -20,17 +19,6 @@ export default function BrandDetail(props) {
       setBrand(response.data.brand)
       setBrandProducts(response.data.brandProducts)
     })
-  }
-
-  function deleteItem(e, url) {
-    e.preventDefault()
-    if (confirm('Delete this item?')) {
-      http.delete(url).then(() => {
-        get()
-      }).catch((e) => {
-        alert(e.response.data.message)
-      })
-    }
   }
 
   return (
@@ -53,8 +41,7 @@ export default function BrandDetail(props) {
                   <thead>
                     <tr>
                       <th>Product Name</th>
-                      <th>Product Price</th>
-                      <th>Actions</th>
+                      <th>Price</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -62,17 +49,10 @@ export default function BrandDetail(props) {
                     <tr key={index}>
                       <td>{brandProduct.name}</td>
                       <td className="text-right">{brandProduct.price}</td>
-                      <td className="text-center">
-                        <Link className="btn btn-sm btn-secondary" to={`/product/${brandProduct.id}`} title="View"><i className="fa fa-eye"></i></Link>
-                        <Link className="btn btn-sm btn-primary" to={`/product/edit/${brandProduct.id}`} title="Edit"><i className="fa fa-pencil"></i></Link>
-                        <a className="btn btn-sm btn-danger" href="#!" onClick={(e)=> deleteItem(e, `products/${brandProduct.id}`)} title="Delete"><i className="fa fa-times"></i></a>
-                      </td>
                     </tr>
                     )}
                   </tbody>
                 </table>
-                <Link className="btn btn-sm btn-primary" to={`/product/create?product_brand_id=${brand.id}`}>Add</Link>
-                <hr />
               </div>
               <div className="col-12">
                 <Link className="btn btn-sm btn-secondary" to={Util.getRef('/brand')}>Back</Link>

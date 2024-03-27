@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Service from './Service'
 import Util from '../../util'
-import http from '../../http'
 
 export default function OrderHeaderDetail(props) {
   
@@ -20,17 +19,6 @@ export default function OrderHeaderDetail(props) {
       setOrderHeader(response.data.orderHeader)
       setOrderHeaderOrderDetails(response.data.orderHeaderOrderDetails)
     })
-  }
-
-  function deleteItem(e, url) {
-    e.preventDefault()
-    if (confirm('Delete this item?')) {
-      http.delete(url).then(() => {
-        get()
-      }).catch((e) => {
-        alert(e.response.data.message)
-      })
-    }
   }
 
   return (
@@ -58,7 +46,6 @@ export default function OrderHeaderDetail(props) {
                       <th>No</th>
                       <th>Product</th>
                       <th>Qty</th>
-                      <th>Actions</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -67,16 +54,10 @@ export default function OrderHeaderDetail(props) {
                       <td className="text-center">{orderHeaderOrderDetail.no}</td>
                       <td>{orderHeaderOrderDetail.product_name}</td>
                       <td className="text-right">{orderHeaderOrderDetail.qty}</td>
-                      <td className="text-center">
-                        <Link className="btn btn-sm btn-primary" to={`/orderDetail/edit/${orderHeaderOrderDetail.order_id}/${orderHeaderOrderDetail.no}`} title="Edit"><i className="fa fa-pencil"></i></Link>
-                        <a className="btn btn-sm btn-danger" href="#!" onClick={(e)=> deleteItem(e, `orderDetails/${orderHeaderOrderDetail.order_id}/${orderHeaderOrderDetail.no}`)} title="Delete"><i className="fa fa-times"></i></a>
-                      </td>
                     </tr>
                     )}
                   </tbody>
                 </table>
-                <Link className="btn btn-sm btn-primary" to={`/orderDetail/create?order_detail_order_id=${orderHeader.id}`}>Add</Link>
-                <hr />
               </div>
               <div className="col-12">
                 <Link className="btn btn-sm btn-secondary" to={Util.getRef('/orderHeader')}>Back</Link>
