@@ -1,5 +1,5 @@
-# Backend-CRUD-React-18-Laravel-10
-Boilerplate Backend CRUD Web App created with React 18 + Laravel 10 by [StackPuz](https://stackpuz.com).
+# Boilerplate-CRUD-React-18-Laravel-10
+Boilerplate CRUD Web App created with React 18 + Laravel 10 by [StackPuz](https://stackpuz.com).
 
 ## Demo
 Checkout the live demo at https://demo-spa.stackpuz.com
@@ -22,8 +22,8 @@ Checkout the live demo at https://demo-spa.stackpuz.com
 - MySQL 5.7
 
 ## Installation
-1. Clone this repository. `git clone https://github.com/stackpuz/Backend-CRUD-React-18-Laravel-10.git .`
-2. Change directory to React project. `cd Backend-CRUD-React-18-Laravel-10/react`
+1. Clone this repository. `git clone https://github.com/stackpuz/Boilerplate-CRUD-React-18-Laravel-10.git .`
+2. Change directory to React project. `cd Boilerplate-CRUD-React-18-Laravel-10/react`
 3. Install the React dependencies. `npm install`
 4. Change directory to Laravel project. `cd ../laravel_api`
 5. Install the Laravel dependencies. `composer install`
