@@ -23,7 +23,7 @@ Checkout the live demo at https://demo-spa.stackpuz.com
 
 ## Installation
 1. Clone this repository. `git clone https://github.com/stackpuz/Boilerplate-CRUD-React-18-Laravel-10.git .`
-2. Change directory to React project. `cd Boilerplate-CRUD-React-18-Laravel-10/react`
+2. Change directory to React project. `cd react`
 3. Install the React dependencies. `npm install`
 4. Change directory to Laravel project. `cd ../laravel_api`
 5. Install the Laravel dependencies. `composer install`
